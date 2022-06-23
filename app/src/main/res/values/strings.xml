@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Keyri Android Example - Okta</string>
+    <string name="okta_example_title">Okta Example</string>
+    <string name="okta_auth">Authenticate with Okta</string>
+    <string name="sign_out_btn">Sign out</string>
+    <string name="have_account">Have an account?</string>
+    <string name="welcome_user">Welcome </string>
+</resources>

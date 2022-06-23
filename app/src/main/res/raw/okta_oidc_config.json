@@ -1,0 +1,11 @@
+{
+  "client_id": "0oa5gvl96f5nXae0H5d7",
+  "redirect_uri": "com.okta.dev-5034385:/callback",
+  "end_session_redirect_uri": "com.okta.dev-5034385:/",
+  "scopes": [
+    "openid",
+    "profile",
+    "offline_access"
+  ],
+  "discovery_uri": "https://dev-5034385.okta.com"
+}
