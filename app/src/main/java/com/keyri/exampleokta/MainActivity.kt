@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import com.keyri.exampleokta.databinding.ActivityMainBinding
 import com.keyrico.keyrisdk.Keyri
-import com.keyrico.keyrisdk.ui.auth.AuthWithScannerActivity
+import com.keyrico.scanner.AuthWithScannerActivity
 import com.okta.oidc.AuthorizationStatus
 import com.okta.oidc.RequestCallback
 import com.okta.oidc.ResultCallback
