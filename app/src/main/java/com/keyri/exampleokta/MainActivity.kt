@@ -228,7 +228,7 @@ class MainActivity : AppCompatActivity() {
     private fun keyriAuth(publicUserId: String?, payload: String) {
         val intent = Intent(this, AuthWithScannerActivity::class.java).apply {
             putExtra(AuthWithScannerActivity.APP_KEY, "SQzJ5JLT4sEE1zWk1EJE1ZGNfwpvnaMP")
-            putExtra(AuthWithScannerActivity.PUBLIC_USER_ID, publicUserId)
+            putExtra(AuthWithScannerActivity.USERNAME, publicUserId)
             putExtra(AuthWithScannerActivity.PAYLOAD, payload)
         }
 
