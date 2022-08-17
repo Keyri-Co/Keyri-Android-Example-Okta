@@ -11,6 +11,7 @@ import androidx.core.view.WindowCompat
 import com.keyri.exampleokta.databinding.ActivityMainBinding
 import com.keyrico.keyrisdk.Keyri
 import com.keyrico.scanner.AuthWithScannerActivity
+import com.keyrico.scanner.easyKeyriAuth
 import com.okta.oidc.AuthorizationStatus
 import com.okta.oidc.RequestCallback
 import com.okta.oidc.ResultCallback
@@ -212,7 +213,7 @@ class MainActivity : AppCompatActivity() {
             put("uid", tokenResult.uid) // Optional
         }.toString()
 
-        val signature = keyri.getUserSignature(email, signingData)
+        val signature = keyri.generateUserSignature(email, signingData)
 
         val payload = JSONObject().apply {
             put("data", data)
@@ -226,13 +227,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun keyriAuth(publicUserId: String?, payload: String) {
-        val intent = Intent(this, AuthWithScannerActivity::class.java).apply {
-            putExtra(AuthWithScannerActivity.APP_KEY, "SQzJ5JLT4sEE1zWk1EJE1ZGNfwpvnaMP")
-            putExtra(AuthWithScannerActivity.USERNAME, publicUserId)
-            putExtra(AuthWithScannerActivity.PAYLOAD, payload)
-        }
-
-        easyKeyriAuthLauncher.launch(intent)
+        easyKeyriAuth(
+            this,
+            easyKeyriAuthLauncher,
+            "SQzJ5JLT4sEE1zWk1EJE1ZGNfwpvnaMP",
+            payload,
+            publicUserId
+        )
     }
 
     companion object {
