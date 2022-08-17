@@ -1,6 +1,5 @@
 package com.keyri.exampleokta
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -10,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import com.keyri.exampleokta.databinding.ActivityMainBinding
 import com.keyrico.keyrisdk.Keyri
-import com.keyrico.scanner.AuthWithScannerActivity
 import com.keyrico.scanner.easyKeyriAuth
 import com.okta.oidc.AuthorizationStatus
 import com.okta.oidc.RequestCallback
