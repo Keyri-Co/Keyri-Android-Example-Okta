@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val client: WebAuthClient by lazy { AuthClient(this).webAuthClient }
+    private val client: WebAuthClient by lazy { AuthClient.createClient(this) }
     private val sessionClient: SessionClient by lazy { client.sessionClient }
 
     private val easyKeyriAuthLauncher =
@@ -203,13 +203,13 @@ class MainActivity : AppCompatActivity() {
             put("tokenResult", tokenResultData)
         }
 
-        val keyri = Keyri()
-
         val signingData = JSONObject().apply {
             put("timestamp", System.currentTimeMillis()) // Optional
             put("email", email) // Optional
             put("uid", tokenResult.uid) // Optional
         }.toString()
+
+        val keyri = Keyri(this)
 
         val signature = keyri.generateUserSignature(email, signingData)
 
