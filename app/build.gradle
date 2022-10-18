@@ -4,14 +4,13 @@ plugins {
 }
 
 android {
-    compileSdk 33
-
-    namespace 'com.keyri.exampleokta'
-
     defaultConfig {
         applicationId "com.keyri.exampleokta"
+        namespace 'com.keyri.exampleokta'
+
         minSdk 23
         targetSdk 33
+        compileSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -53,7 +52,7 @@ dependencies {
     implementation 'com.okta.android:okta-oidc-android:1.3.1'
 
     // Keyri
-    implementation 'com.keyri:keyri-bom:2.0.1'
+    implementation 'com.keyri:keyri-bom:2.1.0'
     implementation 'com.keyri:keyrisdk'
     implementation 'com.keyri:scanner'
 
