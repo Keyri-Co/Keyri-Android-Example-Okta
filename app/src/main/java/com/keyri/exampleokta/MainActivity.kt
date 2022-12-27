@@ -209,7 +209,7 @@ class MainActivity : AppCompatActivity() {
             put("uid", tokenResult.uid) // Optional
         }.toString()
 
-        val keyri = Keyri(this)
+        val keyri = Keyri(this, APP_KEY)
 
         val signature = keyri.generateUserSignature(email, signingData)
 
@@ -228,13 +228,14 @@ class MainActivity : AppCompatActivity() {
         easyKeyriAuth(
             this,
             easyKeyriAuthLauncher,
-            "SQzJ5JLT4sEE1zWk1EJE1ZGNfwpvnaMP",
+            APP_KEY,
             payload,
             publicUserId
         )
     }
 
     companion object {
+        private const val APP_KEY = "SQzJ5JLT4sEE1zWk1EJE1ZGNfwpvnaMP"
         private const val TAG = "Keyri Okta example"
     }
 }
